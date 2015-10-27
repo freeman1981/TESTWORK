@@ -1,0 +1,5 @@
+SELECT tab3.internalnumber, CONCAT(tab1.name , ' ', tab1.surname) AS "Name/Surname", tab3.position,
+  tab1."Salary/year"/12 AS "Salary/Month", tab2.taxes AS "Tax", tab2.month AS "Month"
+FROM test.public.tab3
+LEFT JOIN tab1 ON tab1.id=tab3.employeeid
+LEFT JOIN tab2 ON tab2.employeeid=tab3.employeeid
